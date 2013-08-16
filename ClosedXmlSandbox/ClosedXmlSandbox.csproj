@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompactnessResearch.cs" />
     <Compile Include="ProofOfConcept.cs" />
     <Compile Include="EarlyResearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
