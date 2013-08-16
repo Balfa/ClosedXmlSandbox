@@ -5,7 +5,7 @@ namespace Mo.ClosedXmlSandbox
 {
 	public class ProofOfConcept
 	{
-		static string[][] data = new[]
+		static readonly string[][] Data = new[]
 		{
 			new[] {"Food", "Color", "Oz."},
 			new[] {"Fruit"},
@@ -22,14 +22,14 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
 		}
 		public static void FontFaceStyleWeightColorSize()
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var subHeaders = ws.Ranges("A2:C2,A6:C6,A8:C8");
 
@@ -46,7 +46,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var subHeaders = ws.Ranges("A2:C2,A6:C6,A8:C8");
 
@@ -60,20 +60,20 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var subHeaders = ws.Ranges("A2:C2,A6:C6,A8:C8");
 
 			subHeaders.Style
 				.Fill.SetBackgroundColor(XLColor.Almond);
-
+			subHeaders.Style.Font.SetFontColor(XLColor.AliceBlue);
 			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
 		}
 		public static void WordWrap()
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			ws.Cell("A2").Value = "Extraordinarily long string that deserves a good wrapping!";
 			ws.Cell("A2").Style.Alignment.SetWrapText();
@@ -85,7 +85,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var rows = ws.Rows("2, 6, 8");
 			rows.Height = 35;
@@ -96,7 +96,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var rows = ws.Rows("2, 6, 8");
 			rows.Height = 35;
@@ -110,7 +110,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var cols = ws.Columns(1,3);
 			cols.Width = 44;
@@ -121,7 +121,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var cols = ws.Columns(1, 3);
 			cols.Width = 44;
@@ -134,7 +134,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var subHeaders = ws.Ranges("A2:C2,A6:C6,A8:C8");
 
@@ -147,7 +147,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var range = ws.Range("B1:B4");
 
@@ -161,7 +161,7 @@ namespace Mo.ClosedXmlSandbox
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
 			ws.Name = "JOEY";
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 			ws.Cell("B4").Comment.SetAuthor("Batman")
 			  .AddSignature()
 			  .AddText("Zowie! An annotation!")
@@ -174,7 +174,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var nums = ws.Range("C2:C10");
 			nums.SetDataType(XLCellValues.Number);
@@ -184,7 +184,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			var nums = ws.Range("C2:C10");
 			nums.SetDataType(XLCellValues.Number);
@@ -195,7 +195,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet1");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 			var ws2 = wb.AddWorksheet("Worksheet2");
 			ws2.Cell("D4").Value = "Hi, there";
 			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
@@ -204,7 +204,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			ws.SheetView.FreezeRows(1);
 			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
@@ -213,7 +213,7 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			ws.SheetView.FreezeColumns(1);
 			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
@@ -222,9 +222,51 @@ namespace Mo.ClosedXmlSandbox
 		{
 			var wb = new XLWorkbook();
 			var ws = wb.AddWorksheet("Worksheet Name");
-			ws.Cell("A1").Value = data;
+			ws.Cell("A1").Value = Data;
 
 			ws.SheetView.Freeze(1,1);
+			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
+		}
+		public static void PageLayout()
+		{
+			var wb = new XLWorkbook();
+			var ws = wb.AddWorksheet("Worksheet Name");
+			ws.Cell("A1").Value = Data;
+
+			ws.SheetView.SetView(XLSheetViewOptions.PageLayout);
+			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
+		}
+		public static void PageLayoutWithHeader()
+		{
+			var wb = new XLWorkbook();
+			var ws = wb.AddWorksheet("Worksheet Name");
+			ws.Cell("A1").Value = Data;
+
+			ws.PageSetup.Header.Left.AddText("Joey");
+			var richtext = ws.PageSetup.Header.Center.AddText("Smells");
+			richtext.SetFontColor(XLColor.Red);
+			richtext.SetBold();
+			ws.PageSetup.Header.Right.AddText("(right header)");
+			ws.SheetView.SetView(XLSheetViewOptions.PageLayout);
+			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
+		}
+		public static void PageLayoutWithFooter()
+		{
+			var wb = new XLWorkbook();
+			var ws = wb.AddWorksheet("Worksheet Name");
+			ws.Cell("A1").Value = Data;
+
+			ws.PageSetup.Footer.Left.AddText("Joey");
+			var richtext = ws.PageSetup.Footer.Center.AddText("Smells ");
+			richtext.SetFontColor(XLColor.Red);
+			richtext.SetBold();
+			var othertext = ws.PageSetup.Footer.Center.AddText("Bad");
+			othertext.SetFontColor(XLColor.Green);
+			othertext.SetBold();
+			othertext.SetFontSize(44);
+			ws.PageSetup.Footer.Right.AddText("(right header)");
+			ws.SheetView.SetView(XLSheetViewOptions.PageLayout);
+			wb.AddWorksheet("Normal Layout");
 			wb.SaveAs(MethodBase.GetCurrentMethod().Name + ".xlsx");
 		}
 	}

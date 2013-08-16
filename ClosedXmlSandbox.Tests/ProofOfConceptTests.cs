@@ -95,5 +95,20 @@ namespace Mo.ClosedXmlSandbox.Tests
 		{
 			ProofOfConcept.FreezeBoth();
 		}
+		[Test]
+		public void PageLayout()
+		{
+			ProofOfConcept.PageLayout();
+		}
+		[Test]
+		public void PageLayoutWithHeader()
+		{
+			ProofOfConcept.PageLayoutWithHeader();
+		}
+		[Test]
+		public void PageLayoutWithFooter()
+		{
+			ProofOfConcept.PageLayoutWithFooter();
+		}
 	}
 }
